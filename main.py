@@ -1,3 +1,7 @@
+## Note: The Tic Tac Toe board is formatted with row numbers starting at
+##   0 and column numbers starting at 0. With a board of 3x3 having rows
+##   and columns from 0-2. 
+
 board_size = int(input("Input a number as your board height and width: "))
 
 ## create_board() creates an empty board of board_size height and width
@@ -174,13 +178,17 @@ def ai(board, current_player):
             best_score = score
     return best_move
 
-## main() initializes the tic-tac-toe game against an AI
+## main() initializes the tic-tac-toe game against a human or an AI
 def main():
+    game_type = str(input("Choose who to play versus (human or ai): "))
     player = player_symbol()
-    if player == 'X':
-        players = [('X', 'human'), ('O', 'minimax')]
-    else:
-        players = [('X', 'minimax'), ('O', 'human')]
+    if game_type == 'ai':
+        if player == 'X':
+            players = [('X', 'human'), ('O', 'minimax')]
+        else:
+            players = [('X', 'minimax'), ('O', 'human')]
+    if game_type == 'human':
+            players = [('X', 'human'), ('O', 'human')]
     turn = 0
     current_player = None
     while True:
