@@ -1,5 +1,4 @@
 board_size = int(input("Input a number as your board height and width: "))
-symbol = None
 
 ## create_board() creates an empty board of board_size height and width
 def create_board():
