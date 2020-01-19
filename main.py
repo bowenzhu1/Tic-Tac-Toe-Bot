@@ -1,5 +1,3 @@
-import random
-
 board_size = int(input("Input a number as your board height and width: "))
 symbol = None
 
